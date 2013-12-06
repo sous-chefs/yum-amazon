@@ -3,8 +3,8 @@ yum-amazon Cookbook
 
 The yum-amazon cookbook takes over management of the default
 repositoryids that ship with Amazon Linux systems. It allows attribute
-manipulation of amzn-main, amzn-main-debuginfo, amzn-nosrc,
-amzn-updates, amzn-updates-debuginfo, amzn-preview, and amzn-preview-debuginfo
+manipulation of `amzn-main`, `amzn-main-debuginfo`, `amzn-nosrc`,
+`amzn-updates`, `amzn-updates-debuginfo`, `amzn-preview`, and `amzn-preview-debuginfo`
 
 Requirements
 ------------
