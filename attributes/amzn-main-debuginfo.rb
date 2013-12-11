@@ -1,5 +1,3 @@
-# Encoding: utf-8
-
 default['yum']['amzn-main-debuginfo']['repositoryid'] = 'amzn-main-debuginfo'
 default['yum']['amzn-main-debuginfo']['description'] = 'amzn-main-debuginfo'
 default['yum']['amzn-main-debuginfo']['mirrorlist'] = 'http://repo.us-east-1.amazonaws.com/$releasever/main/debuginfo/mirror.list'

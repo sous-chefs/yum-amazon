@@ -1,5 +1,3 @@
-# Encoding: utf-8
-
 default['yum']['amzn-updates']['repositoryid'] = 'amzn-updates'
 default['yum']['amzn-updates']['description'] = 'amzn-updates-Base'
 default['yum']['amzn-updates']['mirrorlist'] = 'http://repo.us-east-1.amazonaws.com/$releasever/updates/mirror.list'
