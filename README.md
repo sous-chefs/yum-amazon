@@ -26,6 +26,7 @@ default['yum']['amzn-main']['fastestmirror_enabled'] = false
 default['yum']['amzn-main']['gpgcheck'] = true
 default['yum']['amzn-main']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-ga'
 default['yum']['amzn-main']['enabled'] = true
+default['yum']['amzn-main']['managed'] = true
 default['yum']['amzn-main']['max_retries'] = '5'
 default['yum']['amzn-main']['timeout'] = '10'
 default['yum']['amzn-main']['report_instanceid'] = true
@@ -42,7 +43,8 @@ default['yum']['amzn-main-debuginfo']['failovermethod'] = 'priority'
 default['yum']['amzn-main-debuginfo']['fastestmirror_enabled'] = false
 default['yum']['amzn-main-debuginfo']['gpgcheck'] = true
 default['yum']['amzn-main-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-ga'
-default['yum']['amzn-main-debuginfo']['enabled'] = true
+default['yum']['amzn-main-debuginfo']['enabled'] = false
+default['yum']['amzn-main-debuginfo']['managed'] = false
 default['yum']['amzn-main-debuginfo']['max_retries'] = '5'
 default['yum']['amzn-main-debuginfo']['timeout'] = '10'
 default['yum']['amzn-main-debuginfo']['report_instanceid'] = true
@@ -60,6 +62,7 @@ default['yum']['amzn-nosrc']['fastestmirror_enabled'] = false
 default['yum']['amzn-nosrc']['gpgcheck'] = false
 default['yum']['amzn-nosrc']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-ga'
 default['yum']['amzn-nosrc']['enabled'] = false
+default['yum']['amzn-nosrc']['managed'] = false
 default['yum']['amzn-nosrc']['max_retries'] = '5'
 default['yum']['amzn-nosrc']['timeout'] = '10'
 default['yum']['amzn-nosrc']['report_instanceid'] = true
@@ -77,6 +80,7 @@ default['yum']['amzn-updates']['fastestmirror_enabled'] = false
 default['yum']['amzn-updates']['gpgcheck'] = true
 default['yum']['amzn-updates']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-ga'
 default['yum']['amzn-updates']['enabled'] = true
+default['yum']['amzn-updates']['managed'] = true
 default['yum']['amzn-updates']['max_retries'] = '5'
 default['yum']['amzn-updates']['timeout'] = '10'
 default['yum']['amzn-updates']['report_instanceid'] = true
@@ -93,7 +97,8 @@ default['yum']['amzn-updates-debuginfo']['failovermethod'] = 'priority'
 default['yum']['amzn-updates-debuginfo']['fastestmirror_enabled'] = false
 default['yum']['amzn-updates-debuginfo']['gpgcheck'] = true
 default['yum']['amzn-updates-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-ga'
-default['yum']['amzn-updates-debuginfo']['enabled'] = true
+default['yum']['amzn-updates-debuginfo']['enabled'] = false
+default['yum']['amzn-updates-debuginfo']['managed'] = false
 default['yum']['amzn-updates-debuginfo']['max_retries'] = '5'
 default['yum']['amzn-updates-debuginfo']['timeout'] = '10'
 default['yum']['amzn-updates-debuginfo']['report_instanceid'] = true
@@ -111,6 +116,7 @@ default['yum']['amzn-preview']['fastestmirror_enabled'] = false
 default['yum']['amzn-preview']['gpgcheck'] = true
 default['yum']['amzn-preview']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-ga'
 default['yum']['amzn-preview']['enabled'] = false
+default['yum']['amzn-preview']['managed'] = false
 default['yum']['amzn-preview']['max_retries'] = '5'
 default['yum']['amzn-preview']['timeout'] = '10'
 default['yum']['amzn-preview']['report_instanceid'] = true
@@ -127,7 +133,8 @@ default['yum']['amzn-preview-debuginfo']['failovermethod'] = 'priority'
 default['yum']['amzn-preview-debuginfo']['fastestmirror_enabled'] = false
 default['yum']['amzn-preview-debuginfo']['gpgcheck'] = true
 default['yum']['amzn-preview-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-ga'
-default['yum']['amzn-preview-debuginfo']['enabled'] = true
+default['yum']['amzn-preview-debuginfo']['enabled'] = false
+default['yum']['amzn-preview-debuginfo']['managed'] = false
 default['yum']['amzn-preview-debuginfo']['max_retries'] = '5'
 default['yum']['amzn-preview-debuginfo']['timeout'] = '10'
 default['yum']['amzn-preview-debuginfo']['report_instanceid'] = true
@@ -165,10 +172,13 @@ default_attributes(
  )
 ```
 
-To enable the amzn-preview  repository with a wrapper cookbook, place
-the following in a recipe:
+Uncommonly used repositoryids are not managed by default. This is
+speeds up integration testing pipelines by avoiding yum-cache builds
+that nobody cares about. To enable the amzn-preview repository with a
+wrapper cookbook, place the following in a recipe:
 
 ```
+node.default['yum']['amzn-preview']['managed'] = true
 node.default['yum']['amzn-preview']['enabled'] = true
 
 include_recipe 'yum-amazon'
