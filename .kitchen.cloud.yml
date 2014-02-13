@@ -30,5 +30,5 @@ platforms:
 suites:
 - name: default
   run_list:
-#  - recipe[yum-amazon::default]
+  - recipe[yum-amazon::default]
   attributes: {}
