@@ -142,11 +142,6 @@ travis encrypt AWS_ACCESS_KEY_ID='your_bits_here' --add
 travis encrypt AWS_SECRET_ACCESS_'your_bits_here' --add
 travis encrypt AWS_KEYPAIR_NAME='your_bits_here' --add
 travis encrypt EC2_SSH_KEY_PATH='~/.ssh/id_ec2.pem' --add
-
-travis encrypt DIGITAL_OCEAN_CLIENT_ID='your_bits_here' --add
-travis encrypt DIGITAL_OCEAN_API_KEY='your_bits_here' --add
-travis encrypt DIGITAL_OCEAN_SSH_KEY_IDS='your_bits_here' --add
-travis encrypt DIGITAL_OCEAN_SSH_KEY_PATH='~/.ssh/id_do.pem' --add
 ```
 
 The second part is a little more complicated. Travis ENV variables are
@@ -157,15 +152,6 @@ them into ENV variables, then digging them out in the
 
 Here is an AWK script to do the encoding.
 ```
-base64 ~/.ssh/travisci_cook_digitalocean.pem | \
-awk '{
-  j=0;
-  for( i=1; i<length; i=i+90 ) {
-    system("travis encrypt DO_KEY_CHUNK_" j "=" substr($0, i, 90) " --add");
-    j++;
-  }
-}'
-
 base64 ~/.ssh/travisci_cook_ec2.pem | \
 awk '{
   j=0;
