@@ -56,4 +56,3 @@
     only_if { node['platform'] == 'amazon' }
   end
 end
-
