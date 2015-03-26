@@ -53,7 +53,7 @@
     sslverify node['yum'][repo]['sslverify']
     timeout node['yum'][repo]['timeout']
     action :create
-    only_if { node['platofrm'] == 'amazon' }
+    only_if { node['platform'] == 'amazon' }
   end
 end
 
