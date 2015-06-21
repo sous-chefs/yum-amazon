@@ -15,16 +15,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-%w{
- amzn-main
- amzn-main-debuginfo
- amzn-nosrc
- amzn-preview
- amzn-preview-debuginfo
- amzn-updates
- amzn-updates-debuginfo
-}.each do |repo|
+%w(
+  amzn-main
+  amzn-main-debuginfo
+  amzn-nosrc
+  amzn-preview
+  amzn-preview-debuginfo
+  amzn-updates
+  amzn-updates-debuginfo
+).each do |repo|
   yum_repository repo do
     description node['yum'][repo]['description']
     baseurl node['yum'][repo]['baseurl']
@@ -54,5 +53,6 @@
     sslverify node['yum'][repo]['sslverify']
     timeout node['yum'][repo]['timeout']
     action :create
+    only_if { node['platform'] == 'amazon' }
   end
 end
