@@ -1,0 +1,57 @@
+{
+  "total": 7,
+  "touched": 7,
+  "untouched": 0,
+  "coverage": 100.0,
+  "detailed": {
+    "yum_repository[amzn-main]": {
+      "source": {
+        "file": "/var/folders/xj/_5hdsbl54094b3yhrp1c8xvr0000gq/T/d20140213-63056-lhgq9a/yum-amazon/recipes/default.rb",
+        "line": 29
+      },
+      "touched": true
+    },
+    "yum_repository[amzn-main-debuginfo]": {
+      "source": {
+        "file": "/var/folders/xj/_5hdsbl54094b3yhrp1c8xvr0000gq/T/d20140213-63056-lhgq9a/yum-amazon/recipes/default.rb",
+        "line": 29
+      },
+      "touched": true
+    },
+    "yum_repository[amzn-nosrc]": {
+      "source": {
+        "file": "/var/folders/xj/_5hdsbl54094b3yhrp1c8xvr0000gq/T/d20140213-63056-lhgq9a/yum-amazon/recipes/default.rb",
+        "line": 29
+      },
+      "touched": true
+    },
+    "yum_repository[amzn-preview]": {
+      "source": {
+        "file": "/var/folders/xj/_5hdsbl54094b3yhrp1c8xvr0000gq/T/d20140213-63056-lhgq9a/yum-amazon/recipes/default.rb",
+        "line": 29
+      },
+      "touched": true
+    },
+    "yum_repository[amzn-preview-debuginfo]": {
+      "source": {
+        "file": "/var/folders/xj/_5hdsbl54094b3yhrp1c8xvr0000gq/T/d20140213-63056-lhgq9a/yum-amazon/recipes/default.rb",
+        "line": 29
+      },
+      "touched": true
+    },
+    "yum_repository[amzn-updates]": {
+      "source": {
+        "file": "/var/folders/xj/_5hdsbl54094b3yhrp1c8xvr0000gq/T/d20140213-63056-lhgq9a/yum-amazon/recipes/default.rb",
+        "line": 29
+      },
+      "touched": true
+    },
+    "yum_repository[amzn-updates-debuginfo]": {
+      "source": {
+        "file": "/var/folders/xj/_5hdsbl54094b3yhrp1c8xvr0000gq/T/d20140213-63056-lhgq9a/yum-amazon/recipes/default.rb",
+        "line": 29
+      },
+      "touched": true
+    }
+  }
+}
