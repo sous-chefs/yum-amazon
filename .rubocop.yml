@@ -1,10 +1,6 @@
-HashSyntax:
-  EnforcedStyle: hash_rockets
-
 AllCops:
   Exclude:
-    - 'spec/**/*' # ignore spec tests for now
-    - 'vendor/**/*' # ignore non-local files
+    - vendor/**/*
     - Guardfile
 
 # We like longer lines
@@ -19,9 +15,6 @@ Style/Encoding:
 Style/FileName:
   Enabled: false
 
-
-Style/HashSyntax:
-  Enabled: false
 
 # Increase readability of large numbers after 5 digits (ports) only.
 Style/NumericLiterals:
