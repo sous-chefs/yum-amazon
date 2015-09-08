@@ -11,7 +11,7 @@ describe 'yum-amazon::default' do
         node.automatic['platform_version'] = '2014.09'
       end.converge(described_recipe)
     end
-    
+
     it 'creates yum_repository[amzn-main]' do
       expect(chef_run).to create_yum_repository('amzn-main')
     end
@@ -36,8 +36,8 @@ describe 'yum-amazon::default' do
   end
 
   context 'centos' do
-    let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }  
-    
+    let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
+
     it 'creates yum_repository[amzn-main]' do
       expect(chef_run).to_not create_yum_repository('amzn-main')
     end
