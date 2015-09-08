@@ -1,5 +1,7 @@
 yum-amazon Cookbook
 ============
+[![Build Status](https://travis-ci.org/chef-cookbooks/yum-amazon.svg?branch=master)](http://travis-ci.org/chef-cookbooks/yum-amazon)
+[![Cookbook Version](https://img.shields.io/cookbook/v/yum-amazon.svg)](https://supermarket.chef.io/cookbooks/yum-amazon)
 
 The yum-amazon cookbook takes over management of the default
 repositoryids that ship with Amazon Linux systems. It allows attribute
