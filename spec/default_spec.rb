@@ -1,7 +1,4 @@
-# encoding: utf-8
-require 'chefspec'
 require 'spec_helper'
-require 'fauxhai'
 
 describe 'yum-amazon::default' do
   context 'amazon' do
