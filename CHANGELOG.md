@@ -2,7 +2,12 @@ yum-amazon Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
-v0.1.6 (2015-09-21)
+
+v0.2.1 (2014-09-22)
+-------------------
+- Merge 0.2.0 changes with 0.1.6 release changes
+
+v0.1.6 (2015-09-21) <-- This came after 0.2.0 since 0.2.0 was not in git and was later merged
 -------------------
 - Update yum depencency from ~3.0 to ~3.2
 - Add supports metadata for Amazon Linux
@@ -19,6 +24,10 @@ v0.1.6 (2015-09-21)
 - Add Travis CI and cookbook version badges in the readme
 - Expand the requirements section in the readme
 - Add rakefile for simpler testing
+
+v0.2.0 (2014-02-14)
+-------------------
+- All repos except for the main/updates repos are now set to enabled = false and managed = false. Attributes will need to be set if you'd like to manage these repositories
 
 v0.1.5
 ------
