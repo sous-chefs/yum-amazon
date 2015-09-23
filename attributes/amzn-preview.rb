@@ -9,6 +9,7 @@ default['yum']['amzn-preview']['fastestmirror_enabled'] = false
 default['yum']['amzn-preview']['gpgcheck'] = true
 default['yum']['amzn-preview']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-ga'
 default['yum']['amzn-preview']['enabled'] = false
+default['yum']['amzn-preview']['managed'] = false
 default['yum']['amzn-preview']['max_retries'] = '5'
 default['yum']['amzn-preview']['timeout'] = '10'
 default['yum']['amzn-preview']['report_instanceid'] = true
