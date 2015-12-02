@@ -2,6 +2,10 @@ yum-amazon Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
+v0.2.3 (2015-12-01)
+-------------------
+- Fixing if/unless logic in recipe
+
 v0.2.2 (2015-10-28)
 -------------------
 - Fixing Chef 13 deprecation warnings by not passing nils
