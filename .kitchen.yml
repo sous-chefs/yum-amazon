@@ -1,13 +1,26 @@
-driver:
-  name: vagrant
+#<% require 'kitchen-sync' %>
+---
+driver_config:
+   aws_ssh_key_id: <%= ENV['AWS_KEYPAIR_NAME'] %>
+   instance_type: <%= ENV['EC2_INSTANCE_TYPE'] %>
+   availability_zone: <%= ENV['AWS_AVAILABILITY_ZONE'] %>
 
 provisioner:
   name: chef_zero
+  require_chef_omnibus: true
+
+transport:
+  username: ubuntu
+  ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
 
 platforms:
-  - name: centos-6.7
+- name: amazon-2015.09
+  driver_plugin: ec2
+  driver_config:
+    image_id: ami-66b6c60c
 
 suites:
-  - name: default
-    run_list:
-      - recipe[yum-amazon::default]
+- name: default
+  run_list:
+  - recipe[yum-amazon::default]
+  attributes: {}
