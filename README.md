@@ -169,7 +169,7 @@ Usage Example
 -------------
 To disable the amzn-updates repository through a Role or Environment definition
 
-```
+```ruby
 default_attributes(
   :yum => {
     :amzn-updates => {
@@ -186,7 +186,7 @@ speeds up integration testing pipelines by avoiding yum-cache builds
 that nobody cares about. To enable the amzn-preview repository with a
 wrapper cookbook, place the following in a recipe:
 
-```
+```ruby
 node.default['yum']['amzn-preview']['managed'] = true
 node.default['yum']['amzn-preview']['enabled'] = true
 
