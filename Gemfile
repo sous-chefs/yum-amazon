@@ -24,7 +24,6 @@ group :kitchen_vagrant do
 end
 
 group :kitchen_cloud do
-  gem 'kitchen-digitalocean'
   gem 'kitchen-ec2'
 end
 
