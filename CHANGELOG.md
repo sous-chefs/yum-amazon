@@ -1,6 +1,11 @@
 # yum-amazon Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
+## 1.0.0 (2016-09-06)
+- Update testing framework
+- Add chef_version metadata
+- Remove support for Chef 11
+
 ## v0.2.3 (2015-12-01)
 - Fixing if/unless logic in recipe
 
