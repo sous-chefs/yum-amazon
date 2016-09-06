@@ -5,11 +5,11 @@ license 'Apache 2.0'
 description 'Installs and configures the Amazon linux yum repository'
 version '0.2.3'
 
-depends 'yum', '~> 3.2'
+depends 'yum', '>= 3.2', '< 5.0'
 
 supports 'amazon'
 
-source_url 'https://github.com/chef-cookbooks/yum-amazon' if respond_to?(:source_url)
-issues_url 'https://github.com/chef-cookbooks/yum-amazon/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/chef-cookbooks/yum-amazon'
+issues_url 'https://github.com/chef-cookbooks/yum-amazon/issues'
 
-chef_version '>= 11.0' if respond_to?(:chef_version)
+chef_version '>= 12'
