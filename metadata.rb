@@ -11,5 +11,4 @@ supports 'amazon'
 
 source_url 'https://github.com/chef-cookbooks/yum-amazon'
 issues_url 'https://github.com/chef-cookbooks/yum-amazon/issues'
-
-chef_version '>= 12'
+chef_version '>= 12.1'
