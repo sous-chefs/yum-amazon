@@ -1,6 +1,11 @@
 # yum-amazon Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
+## 2.0.0 (2016-11-26)
+
+- Clarify that we require Chef 12.1 not 12.0
+- Require compat_resource instead of yum
+
 ## 1.0.0 (2016-09-06)
 - Update testing framework
 - Add chef_version metadata
