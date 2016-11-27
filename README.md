@@ -1,10 +1,13 @@
 # yum-amazon Cookbook
+
 [![Build Status](https://travis-ci.org/chef-cookbooks/yum-amazon.svg?branch=master)](http://travis-ci.org/chef-cookbooks/yum-amazon) [![Cookbook Version](https://img.shields.io/cookbook/v/yum-amazon.svg)](https://supermarket.chef.io/cookbooks/yum-amazon)
 
 The yum-amazon cookbook takes over management of the default repositoryids that ship with Amazon Linux systems. It allows attribute manipulation of `amzn-main`, `amzn-main-debuginfo`, `amzn-nosrc`, `amzn-updates`, `amzn-updates-debuginfo`, `amzn-preview`, and `amzn-preview-debuginfo`
 
 ## Requirements
+
 ### Platforms
+
 - Amazon Linux
 
 ### Chef
@@ -12,7 +15,8 @@ The yum-amazon cookbook takes over management of the default repositoryids that 
 - Chef 12.1+
 
 ### Cookbooks
-- yum version 3.2.0 or higher
+
+- compat_resource
 
 ## Attributes
 The following attributes are set by default
