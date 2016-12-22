@@ -7,7 +7,7 @@ version '2.0.0'
 
 supports 'amazon'
 
-depends 'compat_resource', '>= 12.14.6'
+depends 'compat_resource', '>= 12.16.3'
 
 source_url 'https://github.com/chef-cookbooks/yum-amazon'
 issues_url 'https://github.com/chef-cookbooks/yum-amazon/issues'
