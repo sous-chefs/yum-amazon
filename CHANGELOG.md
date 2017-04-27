@@ -1,6 +1,11 @@
 # yum-amazon Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
+## 2.0.2 (2017-04-26)
+
+- Switch from Rake testing to Local Delivery
+- Update apache2 license string
+
 ## 2.0.1 (2016-12-22)
 
 - Remove extra line
