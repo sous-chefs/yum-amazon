@@ -1,24 +1,19 @@
-driver_config:
-   aws_ssh_key_id: <%= ENV['AWS_KEYPAIR_NAME'] %>
-   instance_type: <%= ENV['EC2_INSTANCE_TYPE'] %>
-   availability_zone: <%= ENV['AWS_AVAILABILITY_ZONE'] %>
+driver:
+  name: vagrant
 
 provisioner:
   name: chef_zero
   deprecations_as_errors: true
 
-transport:
-  username: ubuntu
-  ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
+verifier:
+  name: inspec
 
 platforms:
-- name: amazon-2015.09
-  driver_plugin: ec2
-  driver_config:
-    image_id: ami-66b6c60c
+  - name: amazon-linux
+    driver_config:
+      box: mvbcoding/awslinux
 
 suites:
 - name: default
   run_list:
   - recipe[yum-amazon::default]
-  attributes: {}
