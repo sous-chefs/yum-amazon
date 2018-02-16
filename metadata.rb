@@ -3,7 +3,7 @@ maintainer 'Chef Software, Inc.'
 maintainer_email 'cookbooks@chef.io'
 license 'Apache-2.0'
 description 'Installs and configures the Amazon linux yum repository'
-version '2.0.2'
+version '3.0.0'
 
 supports 'amazon'
 
