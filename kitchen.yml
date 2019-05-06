@@ -12,6 +12,10 @@ platforms:
   - name: amazonlinux
     driver_config:
       box: mvbcoding/awslinux
+  - name: amazonlinux2
+    driver_config:
+      username: ec2-user
+      password: ec2-user
 
 suites:
 - name: default

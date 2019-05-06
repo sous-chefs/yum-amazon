@@ -14,13 +14,18 @@ verifier:
   name: inspec
 
 platforms:
-
-- name: amazonlinux
-  driver:
-    image: amazonlinux:latest
-    pid_one_command: /sbin/init
-    intermediate_instructions:
-      - RUN yum -y install lsof which initscripts net-tools sudo wget
+  - name: amazonlinux2
+    driver:
+      image: amazonlinux:latest
+      pid_one_command: /usr/lib/systemd/systemd
+      intermediate_instructions:
+        - RUN yum -y install lsof which initscripts net-tools sudo wget
+  - name: amazonlinux
+    driver:
+      image: amazonlinux:1
+      pid_one_command: /sbin/init
+      intermediate_instructions:
+        - RUN yum -y install lsof which initscripts net-tools sudo wget
 
 suites:
 - name: default

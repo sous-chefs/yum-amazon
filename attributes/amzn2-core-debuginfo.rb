@@ -1,0 +1,15 @@
+default['yum']['amzn2-core-debuginfo']['repositoryid'] = 'amzn2-core-debuginfo'
+default['yum']['amzn2-core-debuginfo']['description'] = 'Amazon Linux 2 core repository - debuginfo packages'
+default['yum']['amzn2-core-debuginfo']['mirrorlist'] = 'http://amazonlinux.$awsregion.$awsdomain/$releasever/$product/latest/debuginfo/$basearch/mirror.list'
+default['yum']['amzn2-core-debuginfo']['mirror_expire'] = '300'
+default['yum']['amzn2-core-debuginfo']['metadata_expire'] = '300'
+default['yum']['amzn2-core-debuginfo']['priority'] = '10'
+default['yum']['amzn2-core-debuginfo']['failovermethod'] = 'priority'
+default['yum']['amzn2-core-debuginfo']['fastestmirror_enabled'] = false
+default['yum']['amzn2-core-debuginfo']['gpgcheck'] = true
+default['yum']['amzn2-core-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2'
+default['yum']['amzn2-core-debuginfo']['enabled'] = false
+default['yum']['amzn2-core-debuginfo']['managed'] = true
+default['yum']['amzn2-core-debuginfo']['max_retries'] = '5'
+default['yum']['amzn2-core-debuginfo']['timeout'] = '10'
+default['yum']['amzn2-core-debuginfo']['report_instanceid'] = true

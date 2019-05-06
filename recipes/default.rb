@@ -15,15 +15,24 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-%w(
-  amzn-main
-  amzn-main-debuginfo
-  amzn-nosrc
-  amzn-preview
-  amzn-preview-debuginfo
-  amzn-updates
-  amzn-updates-debuginfo
-).each do |repo|
+repos = if node['platform_version'] == '2'
+          %w(
+            amzn2-core
+            amzn2-core-source
+            amzn2-core-debuginfo
+          )
+        else
+          %w(
+            amzn-main
+            amzn-main-debuginfo
+            amzn-nosrc
+            amzn-preview
+            amzn-preview-debuginfo
+            amzn-updates
+            amzn-updates-debuginfo
+          )
+        end
+repos.each do |repo|
   yum_repository repo do
     description node['yum'][repo]['description'] unless node['yum'][repo]['description'].nil?
     baseurl node['yum'][repo]['baseurl'] unless node['yum'][repo]['baseurl'].nil?
