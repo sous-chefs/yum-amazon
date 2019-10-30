@@ -2,7 +2,7 @@
 # Author:: Sean OMeara (<someara@chef.io>)
 # Recipe:: yum-amazon::default
 #
-# Copyright:: 2013-2017, Chef Software, Inc.
+# Copyright:: 2013-2019, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -53,6 +53,6 @@
     sslverify node['yum'][repo]['sslverify'] unless node['yum'][repo]['sslverify'].nil?
     timeout node['yum'][repo]['timeout'] unless node['yum'][repo]['timeout'].nil?
     action :create
-    only_if { node['platform'] == 'amazon' }
+    only_if { platform?('amazon') }
   end
 end
