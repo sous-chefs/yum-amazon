@@ -2,13 +2,14 @@
 
 [![Build Status](https://travis-ci.org/chef-cookbooks/yum-amazon.svg?branch=master)](http://travis-ci.org/chef-cookbooks/yum-amazon) [![Cookbook Version](https://img.shields.io/cookbook/v/yum-amazon.svg)](https://supermarket.chef.io/cookbooks/yum-amazon)
 
-The yum-amazon cookbook takes over management of the default repositoryids that ship with Amazon Linux systems. It allows attribute manipulation of `amzn-main`, `amzn-main-debuginfo`, `amzn-nosrc`, `amzn-updates`, `amzn-updates-debuginfo`, `amzn-preview`, and `amzn-preview-debuginfo`
+The yum-amazon cookbook takes over management of the default repositoryids that ship with Amazon Linux systems. It allows attribute manipulation of `amzn-main`, `amzn-main-debuginfo`, `amzn-nosrc`, `amzn-updates`, `amzn-updates-debuginfo`, `amzn-preview`, and `amzn-preview-debuginfo` on Amazon Linux 1 sytems. It allows attribute manipulation of 'amzn2-core', 'amzn2-core-source', 'amzn2-core-debuginfo' on Amazon Linux 2 systems.
 
 ## Requirements
 
 ### Platforms
 
 - Amazon Linux
+- Amazon Linux 2
 
 ### Chef
 
@@ -147,6 +148,59 @@ default['yum']['amzn-preview-debuginfo']['timeout'] = '10'
 default['yum']['amzn-preview-debuginfo']['report_instanceid'] = true
 ```
 
+```ruby
+default['yum']['amzn2-core']['repositoryid'] = 'amzn2-core'
+default['yum']['amzn2-core']['description'] = 'Amazon Linux 2 core repository'
+default['yum']['amzn2-core']['mirrorlist'] = 'http://amazonlinux.$awsregion.$awsdomain/$releasever/$product/latest/$basearch/mirror.list'
+default['yum']['amzn2-core']['mirror_expire'] = '300'
+default['yum']['amzn2-core']['metadata_expire'] = '300'
+default['yum']['amzn2-core']['priority'] = '10'
+default['yum']['amzn2-core']['failovermethod'] = 'priority'
+default['yum']['amzn2-core']['fastestmirror_enabled'] = false
+default['yum']['amzn2-core']['gpgcheck'] = true
+default['yum']['amzn2-core']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2'
+default['yum']['amzn2-core']['enabled'] = true
+default['yum']['amzn2-core']['managed'] = true
+default['yum']['amzn2-core']['max_retries'] = '5'
+default['yum']['amzn2-core']['timeout'] = '10'
+default['yum']['amzn2-core']['report_instanceid'] = true
+```
+
+```ruby
+default['yum']['amzn2-core-source']['repositoryid'] = 'amzn2-core-source'
+default['yum']['amzn2-core-source']['description'] = 'Amazon Linux 2 core repository - source packages'
+default['yum']['amzn2-core-source']['mirrorlist'] = 'http://amazonlinux.$awsregion.$awsdomain/$releasever/$product/latest/SRPMS/mirror.list'
+default['yum']['amzn2-core-source']['mirror_expire'] = '300'
+default['yum']['amzn2-core-source']['metadata_expire'] = '300'
+default['yum']['amzn2-core-source']['priority'] = '10'
+default['yum']['amzn2-core-source']['failovermethod'] = 'priority'
+default['yum']['amzn2-core-source']['fastestmirror_enabled'] = false
+default['yum']['amzn2-core-source']['gpgcheck'] = true
+default['yum']['amzn2-core-source']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2'
+default['yum']['amzn2-core-source']['enabled'] = false
+default['yum']['amzn2-core-source']['managed'] = true
+default['yum']['amzn2-core-source']['max_retries'] = '5'
+default['yum']['amzn2-core-source']['timeout'] = '10'
+default['yum']['amzn2-core-source']['report_instanceid'] = true
+```
+
+```ruby
+default['yum']['amzn2-core-debuginfo']['repositoryid'] = 'amzn2-core-debuginfo'
+default['yum']['amzn2-core-debuginfo']['description'] = 'Amazon Linux 2 core repository - debuginfo packages'
+default['yum']['amzn2-core-debuginfo']['mirrorlist'] = 'http://amazonlinux.$awsregion.$awsdomain/$releasever/$product/latest/debuginfo/$basearch/mirror.list'
+default['yum']['amzn2-core-debuginfo']['mirror_expire'] = '300'
+default['yum']['amzn2-core-debuginfo']['metadata_expire'] = '300'
+default['yum']['amzn2-core-debuginfo']['priority'] = '10'
+default['yum']['amzn2-core-debuginfo']['failovermethod'] = 'priority'
+default['yum']['amzn2-core-debuginfo']['fastestmirror_enabled'] = false
+default['yum']['amzn2-core-debuginfo']['gpgcheck'] = true
+default['yum']['amzn2-core-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2'
+default['yum']['amzn2-core-debuginfo']['enabled'] = false
+default['yum']['amzn2-core-debuginfo']['managed'] = true
+default['yum']['amzn2-core-debuginfo']['max_retries'] = '5'
+default['yum']['amzn2-core-debuginfo']['timeout'] = '10'
+default['yum']['amzn2-core-debuginfo']['report_instanceid'] = true
+```
 ## Recipes
 
 - default - Walks through node attributes and feeds a yum_resource

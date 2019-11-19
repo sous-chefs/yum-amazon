@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe 'yum-amazon::default' do
-  context 'amazon' do
-    cached(:chef_run) { ChefSpec::SoloRunner.new(platform: 'amazon', version: '2016.09').converge(described_recipe) }
+  context 'amazonlinux' do
+    cached(:chef_run) { ChefSpec::SoloRunner.new(platform: 'amazon', version: '2018.03').converge(described_recipe) }
 
     it 'creates yum_repository[amzn-main]' do
       expect(chef_run).to create_yum_repository('amzn-main')
@@ -24,6 +24,20 @@ describe 'yum-amazon::default' do
     end
     it 'creates yum_repository[amzn-updates-debuginfo]' do
       expect(chef_run).to create_yum_repository('amzn-updates-debuginfo')
+    end
+  end
+
+  context 'amazonlinux2' do
+    cached(:chef_run) { ChefSpec::SoloRunner.new(platform: 'amazon', version: '2').converge(described_recipe) }
+
+    it 'creates yum_repository[amzn2-core]' do
+      expect(chef_run).to create_yum_repository('amzn2-core')
+    end
+    it 'creates yum_repository[amzn2-core-debuginfo]' do
+      expect(chef_run).to create_yum_repository('amzn2-core-debuginfo')
+    end
+    it 'creates yum_repository[amzn2-core-source]' do
+      expect(chef_run).to create_yum_repository('amzn2-core-source')
     end
   end
 
