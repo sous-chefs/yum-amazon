@@ -1,9 +1,14 @@
 # yum-amazon Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
-## 3.1.0 (2019-05-06)
+## 3.1.0 (2019-11-18)
 
-- Add support for Amazon Linux 2
+- Add support for Amazon Linux 2 - [@bheusinkveld](https://github.com/bheusinkveld)
+- Add code owners file - [@tas50](https://github.com/tas50)
+- Rename the kitchen config - [@tas50](https://github.com/tas50)
+- Remove stove from the gemfile - [@tas50](https://github.com/tas50)
+- Cookstyle fixes - [@tas50](https://github.com/tas50)
+- Update for Chef 15 license agreement and Chef Workstation - [@tas50](https://github.com/tas50)
 
 ## 3.0.0 (2018-02-16)
 
