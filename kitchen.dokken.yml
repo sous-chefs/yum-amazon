@@ -1,7 +1,7 @@
 driver:
   name: dokken
   privileged: true # because Docker and SystemD/Upstart
-  chef_version: current
+  chef_version: <%= ENV['CHEF_VERSION'] || 'current' %>
 
 transport:
   name: dokken
@@ -9,20 +9,18 @@ transport:
 provisioner:
   name: dokken
   deprecations_as_errors: true
+  chef_license: accept-no-persist
 
 verifier:
   name: inspec
 
 platforms:
-
 - name: amazonlinux
   driver:
-    image: amazonlinux:latest
+    image: dokken/amazonlinux
     pid_one_command: /sbin/init
-    intermediate_instructions:
-      - RUN yum -y install lsof which initscripts net-tools sudo wget
 
-suites:
-- name: default
-  run_list:
-  - recipe[yum-amazon::default]
+- name: amazonlinux-2
+  driver:
+    image: dokken/amazonlinux-2
+    pid_one_command: /usr/lib/systemd/systemd
