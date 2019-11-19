@@ -1,0 +1,15 @@
+default['yum']['amzn2-core']['repositoryid'] = 'amzn2-core'
+default['yum']['amzn2-core']['description'] = 'Amazon Linux 2 core repository'
+default['yum']['amzn2-core']['mirrorlist'] = 'http://amazonlinux.$awsregion.$awsdomain/$releasever/$product/latest/$basearch/mirror.list'
+default['yum']['amzn2-core']['mirror_expire'] = '300'
+default['yum']['amzn2-core']['metadata_expire'] = '300'
+default['yum']['amzn2-core']['priority'] = '10'
+default['yum']['amzn2-core']['failovermethod'] = 'priority'
+default['yum']['amzn2-core']['fastestmirror_enabled'] = false
+default['yum']['amzn2-core']['gpgcheck'] = true
+default['yum']['amzn2-core']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2'
+default['yum']['amzn2-core']['enabled'] = true
+default['yum']['amzn2-core']['managed'] = true
+default['yum']['amzn2-core']['max_retries'] = '5'
+default['yum']['amzn2-core']['timeout'] = '10'
+default['yum']['amzn2-core']['report_instanceid'] = true

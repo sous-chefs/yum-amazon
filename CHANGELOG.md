@@ -1,6 +1,10 @@
 # yum-amazon Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
+## 3.1.0 (2019-05-06)
+
+- Add support for Amazon Linux 2
+
 ## 3.0.0 (2018-02-16)
 
 - Require Chef 12.14+ and remove compat_resource dep
