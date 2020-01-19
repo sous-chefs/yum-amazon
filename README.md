@@ -1,6 +1,6 @@
 # yum-amazon Cookbook
 
-[![Build Status](https://travis-ci.org/chef-cookbooks/yum-amazon.svg?branch=master)](http://travis-ci.org/chef-cookbooks/yum-amazon) [![Cookbook Version](https://img.shields.io/cookbook/v/yum-amazon.svg)](https://supermarket.chef.io/cookbooks/yum-amazon)
+[![Cookbook Version](https://img.shields.io/cookbook/v/yum-amazon.svg)](https://supermarket.chef.io/cookbooks/yum-amazon)
 
 The yum-amazon cookbook takes over management of the default repositoryids that ship with Amazon Linux systems. It allows attribute manipulation of `amzn-main`, `amzn-main-debuginfo`, `amzn-nosrc`, `amzn-updates`, `amzn-updates-debuginfo`, `amzn-preview`, and `amzn-preview-debuginfo` on Amazon Linux 1 sytems. It allows attribute manipulation of 'amzn2-core', 'amzn2-core-source', 'amzn2-core-debuginfo' on Amazon Linux 2 systems.
 
