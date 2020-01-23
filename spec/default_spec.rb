@@ -42,7 +42,7 @@ describe 'yum-amazon::default' do
   end
 
   context 'centos' do
-    cached(:chef_run) { ChefSpec::SoloRunner.new(platform: 'centos', version: '7.3.1611').converge(described_recipe) }
+    cached(:chef_run) { ChefSpec::SoloRunner.new(platform: 'centos', version: '7').converge(described_recipe) }
 
     it 'does not create yum_repository[amzn-main]' do
       expect(chef_run).to_not create_yum_repository('amzn-main')
