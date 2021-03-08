@@ -16,6 +16,6 @@ platforms:
   - name: amazonlinux-2
 
 suites:
-- name: default
-  run_list:
-  - recipe[yum-amazon::default]
+  - name: default
+    run_list:
+      - recipe[yum-amazon::default]

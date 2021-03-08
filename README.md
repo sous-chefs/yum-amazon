@@ -209,6 +209,7 @@ default['yum']['amzn2-core-debuginfo']['max_retries'] = '5'
 default['yum']['amzn2-core-debuginfo']['timeout'] = '10'
 default['yum']['amzn2-core-debuginfo']['report_instanceid'] = true
 ```
+
 ## Recipes
 
 - default - Walks through node attributes and feeds a yum_resource
