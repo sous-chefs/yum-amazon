@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
-## Unreleased
+## 4.0.0 - *2021-03-09*
 
 - Sous Chefs Adoption
 - Remove Amazonlinux version 1 support
