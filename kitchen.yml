@@ -5,6 +5,8 @@ provisioner:
   name: chef_zero
   deprecations_as_errors: true
   chef_license: accept-no-persist
+  enforce_idempotency: true
+  multiple_converge: 2
 
 verifier:
   name: inspec
@@ -16,6 +18,6 @@ platforms:
   - name: amazonlinux-2
 
 suites:
-- name: default
-  run_list:
-  - recipe[yum-amazon::default]
+  - name: default
+    run_list:
+      - recipe[yum-amazon::default]
