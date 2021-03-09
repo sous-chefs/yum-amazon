@@ -5,7 +5,8 @@ This file is used to list changes made in each version of the yum-amazon cookboo
 ## Unreleased
 
 - Sous Chefs Adoption
-- Add inspec tests
+- Remove Amazonlinux version 1 support
+- Add InSpec tests
 - Linting
 - Fix rspec
 
