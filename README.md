@@ -255,7 +255,7 @@ include_recipe 'yum-amazon'
 
 Point the base and updates repositories at an internally hosted server.
 
-```
+```ruby
 node.default['yum']['amzn-main']['enabled'] = true
 node.default['yum']['amzn-main']['mirrorlist'] = nil
 node.default['yum']['amzn-main']['baseurl'] = 'https://internal.example.com/amzn-main/os/x86_64'
@@ -270,7 +270,7 @@ include_recipe 'yum-amazon'
 
 **Copyright:** 2011-2016, Chef Software, Inc.
 
-```
+```text
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at

@@ -4,9 +4,15 @@ This file is used to list changes made in each version of the yum-amazon cookboo
 
 ## Unreleased
 
+- Standardise files with files in the repo-management
+
 ## 4.0.4 - *2023-02-14*
 
+- Standardise files with files in the repo-management
+
 ## 4.0.3 - *2023-02-14*
+
+- Standardise files with files in the repo-management
 
 ## 4.0.2 - *2021-08-31*
 
