@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
+## Unreleased
+
 ## 4.0.5 - *2023-09-29*
 
 - Standardise files with files in the repo-management
