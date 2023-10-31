@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the yum-amazon cookboo
 
 ## Unreleased
 
+- Use a regexp match in the tests so we don't need to fix the test every month
+
 ## 4.0.5 - *2023-09-29*
 
 - Standardise files with files in the repo-management
