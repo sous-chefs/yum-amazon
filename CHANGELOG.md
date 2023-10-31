@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
-## Unreleased
+## 4.0.6 - *2023-10-31*
 
 - Use a regexp match in the tests so we don't need to fix the test every month
 
