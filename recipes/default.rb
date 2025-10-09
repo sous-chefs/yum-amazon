@@ -16,10 +16,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 repos = %w(
-          amzn2-core
-          amzn2-core-source
-          amzn2-core-debuginfo
-        )
+  amzn2-core
+  amzn2-core-source
+  amzn2-core-debuginfo
+)
 
 repos.each do |repo|
   yum_repository repo do
