@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
+## [4.0.12](https://github.com/sous-chefs/yum-amazon/compare/4.0.11...v4.0.12) (2025-10-16)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#32](https://github.com/sous-chefs/yum-amazon/issues/32)) ([1e63f99](https://github.com/sous-chefs/yum-amazon/commit/1e63f99298dcbe8c5de867d3a99f0b513c027409))
+
 ## 4.0.6 - *2023-10-31*
 
 * Use a regexp match in the tests so we don't need to fix the test every month
