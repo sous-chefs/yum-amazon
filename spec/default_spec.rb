@@ -1,43 +1,43 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'yum-amazon::default' do
-  context 'amazonlinux2' do
-    cached(:chef_run) { ChefSpec::SoloRunner.new(platform: 'amazon', version: '2').converge(described_recipe) }
+  context 'amazonlinux-2023' do
+    cached(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'amazon', version: '2023') do |node|
+        node.normal['yum']['amazonlinux'] = { 'description' => 'Amazon Linux 2023 repository', 'enabled' => true, 'gpgcheck' => true }
+        node.normal['yum']['amazonlinux-debuginfo'] = { 'description' => 'Amazon Linux 2023 repository - Debug', 'enabled' => false }
+        node.normal['yum']['amazonlinux-source'] = { 'description' => 'Amazon Linux 2023 repository - Source packages', 'enabled' => false }
+      end.converge(described_recipe)
+    end
 
-    it 'creates yum_repository[amzn2-core]' do
-      expect(chef_run).to create_yum_repository('amzn2-core')
+    it 'creates yum_repository[amazonlinux]' do
+      expect(chef_run).to create_yum_repository('amazonlinux')
     end
-    it 'creates yum_repository[amzn2-core-debuginfo]' do
-      expect(chef_run).to create_yum_repository('amzn2-core-debuginfo')
+
+    it 'creates yum_repository[amazonlinux-debuginfo]' do
+      expect(chef_run).to create_yum_repository('amazonlinux-debuginfo')
     end
-    it 'creates yum_repository[amzn2-core-source]' do
-      expect(chef_run).to create_yum_repository('amzn2-core-source')
+
+    it 'creates yum_repository[amazonlinux-source]' do
+      expect(chef_run).to create_yum_repository('amazonlinux-source')
     end
   end
 
   context 'centos' do
     cached(:chef_run) { ChefSpec::SoloRunner.new(platform: 'centos', version: '7').converge(described_recipe) }
 
-    it 'does not create yum_repository[amzn-main]' do
-      expect(chef_run).to_not create_yum_repository('amzn-main')
+    it 'does not create yum_repository[amazonlinux]' do
+      expect(chef_run).to_not create_yum_repository('amazonlinux')
     end
-    it 'does not create yum_repository[amzn-main-debuginfo]' do
-      expect(chef_run).to_not create_yum_repository('amzn-main-debuginfo')
+
+    it 'does not create yum_repository[amazonlinux-debuginfo]' do
+      expect(chef_run).to_not create_yum_repository('amazonlinux-debuginfo')
     end
-    it 'does not create yum_repository[amzn-nosrc]' do
-      expect(chef_run).to_not create_yum_repository('amzn-nosrc')
-    end
-    it 'does not create yum_repository[amzn-preview]' do
-      expect(chef_run).to_not create_yum_repository('amzn-preview')
-    end
-    it 'does not create yum_repository[amzn-preview-debuginfo]' do
-      expect(chef_run).to_not create_yum_repository('amzn-preview-debuginfo')
-    end
-    it 'does not create yum_repository[amzn-updates]' do
-      expect(chef_run).to_not create_yum_repository('amzn-updates')
-    end
-    it 'does not create yum_repository[amzn-updates-debuginfo]' do
-      expect(chef_run).to_not create_yum_repository('amzn-updates-debuginfo')
+
+    it 'does not create yum_repository[amazonlinux-source]' do
+      expect(chef_run).to_not create_yum_repository('amazonlinux-source')
     end
   end
 end

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 #
-# Author:: Sean OMeara (<someara@chef.io>)
-# Recipe:: yum-amazon::default
+# Cookbook:: yum-amazon
+# Recipe:: default
 #
-# Copyright:: 2013-2019, Chef Software, Inc.
+# Copyright:: 2013-2025, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,12 +18,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 repos = %w(
-  amzn2-core
-  amzn2-core-source
-  amzn2-core-debuginfo
+  amazonlinux
+  amazonlinux-source
+  amazonlinux-debuginfo
 )
 
 repos.each do |repo|
+  next unless node.dig('yum', repo)
+
   yum_repository repo do
     description node['yum'][repo]['description'] unless node['yum'][repo]['description'].nil?
     baseurl node['yum'][repo]['baseurl'] unless node['yum'][repo]['baseurl'].nil?

@@ -1,0 +1,9 @@
+---
+name: default
+title: Default Tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Integration tests for yum-amazon cookbook
+version: 1.0.0
+supports:
+  - platform-family: amazon
