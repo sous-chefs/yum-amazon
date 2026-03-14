@@ -21,7 +21,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[yum-amazon::default]
+      - recipe[test::default]
     verifier:
       inspec_tests:
         - path: test/integration/default

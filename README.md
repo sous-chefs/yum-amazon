@@ -6,7 +6,7 @@
 [![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-The yum-amazon cookbook manages the default repository configuration that ships with Amazon Linux 2023 systems. It allows attribute manipulation of `amazonlinux`, `amazonlinux-debuginfo`, and `amazonlinux-source` repositories.
+The yum-amazon cookbook provides the `yum_amazon_repo` custom resource for managing Amazon Linux 2023 yum/dnf repository configuration.
 
 ## Maintainers
 
@@ -26,50 +26,48 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 - none
 
-## Managed Repositories
+## Resources
 
-The cookbook manages the following Amazon Linux 2023 repositories via node attributes under `node['yum']`:
+### yum_amazon_repo
 
-- **`amazonlinux`** — Main repository (enabled by default)
-- **`amazonlinux-debuginfo`** — Debug packages (disabled by default)
-- **`amazonlinux-source`** — Source packages (disabled by default)
+See [documentation/yum_amazon_repo.md](documentation/yum_amazon_repo.md) for full property reference.
 
-Each repository supports the standard `yum_repository` properties such as `description`, `baseurl`, `mirrorlist`, `gpgcheck`, `gpgkey`, `enabled`, and more.
+#### Actions
 
-## Recipes
+- **`:create`** — Creates the repository (default)
+- **`:delete`** — Removes the repository
 
-### default
-
-Iterates over the managed repositories and creates a `yum_repository` resource for each one, driven by node attributes. Example resource generated during compilation:
+#### Examples
 
 ```ruby
-yum_repository 'amazonlinux' do
-  mirrorlist 'https://cdn.amazonlinux.com/al2023/core/mirrors/$releasever/$basearch/mirror.list'
-  description 'Amazon Linux 2023 repository'
-  enabled true
-  gpgcheck true
-  gpgkey 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2023'
+# Main repository with defaults
+yum_amazon_repo 'amazonlinux'
+
+# Debug repository (disabled)
+yum_amazon_repo 'amazonlinux-debuginfo' do
+  description 'Amazon Linux 2023 repository - Debug'
+  mirrorlist 'https://cdn.amazonlinux.com/al2023/core/mirrors/$releasever/debuginfo/$basearch/mirror.list'
+  enabled false
 end
-```
 
-## Usage Examples
+# Source repository (disabled)
+yum_amazon_repo 'amazonlinux-source' do
+  description 'Amazon Linux 2023 repository - Source packages'
+  mirrorlist 'https://cdn.amazonlinux.com/al2023/core/mirrors/$releasever/SRPMS/mirror.list'
+  enabled false
+end
 
-### Disable a repository
+# Point at an internal mirror
+yum_amazon_repo 'amazonlinux' do
+  mirrorlist nil
+  baseurl 'https://internal.example.com/amazonlinux/2023/$basearch'
+  sslverify false
+end
 
-```ruby
-node.default['yum']['amazonlinux-source']['enabled'] = false
-
-include_recipe 'yum-amazon'
-```
-
-### Point at an internal mirror
-
-```ruby
-node.default['yum']['amazonlinux']['mirrorlist'] = nil
-node.default['yum']['amazonlinux']['baseurl'] = 'https://internal.example.com/amazonlinux/2023/$basearch'
-node.default['yum']['amazonlinux']['sslverify'] = false
-
-include_recipe 'yum-amazon'
+# Remove a repository
+yum_amazon_repo 'amazonlinux-debuginfo' do
+  action :delete
+end
 ```
 
 ## License & Authors
