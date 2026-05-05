@@ -2,6 +2,24 @@
 
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
+## [5.0.0](https://github.com/sous-chefs/yum-amazon/compare/v4.0.12...v5.0.0) (2026-05-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* Amazon Linux 2 support removed. Attribute names changed from amzn2-core* to amazonlinux*.
+* Cookbook no longer provides recipes. Use yum_amazon_repo resource directly.
+
+### Features
+
+* modernize for Amazon Linux 2023, drop AL2 support ([#35](https://github.com/sous-chefs/yum-amazon/issues/35)) ([73d0b9c](https://github.com/sous-chefs/yum-amazon/commit/73d0b9c0d3c233cd69cfd431dbda0b4412ee7547))
+* prepare yum-amazon for release ([#38](https://github.com/sous-chefs/yum-amazon/issues/38)) ([c9008dc](https://github.com/sous-chefs/yum-amazon/commit/c9008dc82c5ceb80bcbf459b793fe707b7e8b518))
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#32](https://github.com/sous-chefs/yum-amazon/issues/32)) ([1e63f99](https://github.com/sous-chefs/yum-amazon/commit/1e63f99298dcbe8c5de867d3a99f0b513c027409))
+
 ## [4.0.12](https://github.com/sous-chefs/yum-amazon/compare/4.0.11...v4.0.12) (2025-10-16)
 
 
