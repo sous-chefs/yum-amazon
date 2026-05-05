@@ -30,7 +30,7 @@ Manages Amazon Linux 2023 yum/dnf repository configuration files in `/etc/yum.re
 | `max_retries`     | String           |                                                                                                  | Maximum retry attempts               |
 | `metadata_expire` | String           |                                                                                                  | Metadata expiration time             |
 | `mirror_expire`   | String           |                                                                                                  | Mirror list expiration time          |
-| `mirrorlist`      | String           | AL2023 core mirror list                                                                          | Mirror list URL                      |
+| `mirrorlist`      | String           | `'https://cdn.amazonlinux.com/al2023/core/mirrors/$releasever/$basearch/mirror.list'`             | Mirror list URL                      |
 | `priority`        | String           |                                                                                                  | Repository priority                  |
 | `proxy`           | String           |                                                                                                  | Proxy URL                            |
 | `proxy_username`  | String           |                                                                                                  | Proxy username                       |
