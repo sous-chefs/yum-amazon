@@ -9,6 +9,7 @@ transport:
 
 provisioner:
   name: dokken
+  chef_license: accept
 
 platforms:
   - name: amazonlinux-2023
