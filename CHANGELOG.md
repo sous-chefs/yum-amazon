@@ -7,7 +7,7 @@ This file is used to list changes made in each version of the yum-amazon cookboo
 
 ### ⚠ BREAKING CHANGES
 
-* Amazon Linux 2 support removed. Attribute names changed from amzn2-core* to amazonlinux*.
+* Amazon Linux 2 support removed. Attribute names changed from `amzn2-core*` to `amazonlinux*`.
 * Cookbook no longer provides recipes. Use yum_amazon_repo resource directly.
 
 ### Features
