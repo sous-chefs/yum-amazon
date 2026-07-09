@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the yum-amazon cookbook.
 
+## [5.0.1](https://github.com/sous-chefs/yum-amazon/compare/v5.0.0...v5.0.1) (2026-07-09)
+
+
+### Bug Fixes
+
+* migrate to Policyfile ([#46](https://github.com/sous-chefs/yum-amazon/issues/46)) ([fb920d7](https://github.com/sous-chefs/yum-amazon/commit/fb920d7cf88632dab01178a8a5bb50d66d3c758d))
+
 ## [5.0.0](https://github.com/sous-chefs/yum-amazon/compare/v4.0.12...v5.0.0) (2026-05-05)
 
 
